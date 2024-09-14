@@ -1,6 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+#carrousel {
+  scroll-behavior: smooth;
+}
+
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
@@ -9,141 +18,180 @@
     transform: translateX(0);
   }
 }
-@keyframes appear{
-  0%{
-    opacity:0%;
+
+@keyframes appear {
+  0% {
+    opacity: 0%;
   }
-  100%{
-    opacity:100%;
+  100% {
+    opacity: 100%;
   }
 }
-@keyframes vanish{
-  0%{
-    opacity:100%;
+
+@keyframes vanish {
+  0% {
+    opacity: 100%;
   }
-  100%{
-    opacity:0%;
+  100% {
+    opacity: 0%;
   }
 }
-@keyframes appearfromright{
- 0%{
-  mask-size:0%;
-  mask-image:linear-gradient(to right,rgba(0,0,0,1) 100%,rgba(0,0,0,0)); 
-  }
-  25%{
-    mask-size:100%;
-  mask-image:linear-gradient(to right,rgba(0,0,0,1) 100%,rgba(0,0,0,0));
-  }
-  70%{
-    mask-size:100%;
-  mask-image:linear-gradient(to right,rgba(0,0,0,1) 100%,rgba(0,0,0,0));
-  }
 
-
-  100%{
-    mask-size:0%;
-  mask-image:linear-gradient(to left,rgba(0,0,0,1) 100%,rgba(0,0,0,0));
+@keyframes appearfromright {
+  0% {
+    mask-size: 0%;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 0));
   }
-
- 
+  25%,
+  70% {
+    mask-size: 100%;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 0));
+  }
+  100% {
+    mask-size: 0%;
+    mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 0));
+  }
 }
 
+@keyframes menu {
+  0% {
+    height: 0px;
+    opacity: 0;
+  }
+  100% {
+    overflow: auto;
+    height: 100px;
+    opacity: 100;
+  }
+}
+
+@keyframes reverseMenu {
+  0% {
+    overflow: auto;
+    height: 100px;
+    opacity: 100;
+  }
+  100% {
+    height: 0px;
+    opacity: 0;
+  }
+}
+
+@keyframes middleone {
+  0% {
+    transform: rotate(0deg);
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(6px) rotate(45deg);
+  }
+}
+
+@keyframes reverseMiddleone {
+  0% {
+    transform: translateY(6px) rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    transform: translateY(0);
+  }
+}
+
+@keyframes bottomone {
+  0% {
+    transform: rotate(0deg);
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+}
+
+@keyframes reverseBottomone {
+  0% {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    transform: translateY(0);
+  }
+}
+
+@keyframes topone {
+  0% {
+    opacity: 100;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes reverseTopone {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+#menu.active > #middleone {
+  animation: 0.5s ease-in-out middleone forwards;
+}
+
+#menu.active > #topone {
+  animation: 0.5s ease-in-out topone forwards;
+}
+
+#menu.active > #bottomone {
+  animation: 0.5s ease-in-out bottomone forwards;
+}
+
+#menu.active > #menuItems {
+  animation: 0.5s ease-in-out menu forwards;
+}
+
+#menu:not(.active) > #middleone {
+  animation: 0.5s ease-in-out reverseMiddleone forwards;
+}
+
+#menu:not(.active) > #topone {
+  animation: 0.5s ease-in-out reverseTopone forwards;
+}
+
+#menu:not(.active) > #bottomone {
+  animation: 0.5s ease-in-out reverseBottomone forwards;
+}
+
+#menu:not(.active) > #menuItems {
+  animation: 0.5s ease-in-out reverseMenu forwards;
+}
 
 header {  
   animation: 1s ease-out 0s 1 slideInFromLeft;
-
 }
-#loadingTitle{
-  mask-repeat:no-repeat;
-  animation: 5s ease-in 0s 1 appearfromright;
 
+#loadingTitle {
+  mask-repeat: no-repeat;
+  animation: 5.2s ease-in 0s 1 appearfromright;
 }
-#whole{
+
+#whole {
   animation: 2s ease-in 0s 1 appear;
 }
-#loading{
+
+#loading {
   animation: 1.3s normal 4s 1 vanish;
-
 }
-#bg{
 
-background: linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.20)),url("/images/day.jpg") ;
-background-attachment: fixed;
+.bg-section, #bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.20)), url("/images/day.jpg");
+  background-attachment: fixed;
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-
-}
-#cloud {
-  background: rgba(255, 255, 255);
-  z-index:1;
-
-  border-radius: 150px;	
-  box-shadow: 10px 10px  rgba(0,0,0,0.2);
-}
-.star{
-  box-shadow: 0 0 10px 3px silver,0 0 3px 1px silver
-
-}
-#moon{
-  background:gray;
-  width:70px;
-  height:70px;
-  border-radius:100px;
-  transition:0.5s;
-  box-shadow: 0 0 35px 5px silver,0 0 15px 5px silver
-
-}
-#moon:hover{
-  box-shadow: 0 0 35px 5px silver,0 0 35px 15px silver;
-
-  animation-name: borderpulsemoon;
-  animation-duration: 2s; 
-  animation-iteration-count: infinite;
-  animation-timing-function:ease-in-out;
-}
-#sun{
-  background:#fbbf24;
-  width:70px;
-  height:70px;
-  border-radius:100px;
-  transition:0.5s;
-
-  box-shadow: 0 0 35px 5px yellow,0 0 25px 10px yellow 
-}
-#sun:hover{
-  animation-name: borderpulsesun;
-  animation-duration: 2s; 
-  animation-iteration-count: infinite;
-  animation-timing-function:ease-in-out;
-  box-shadow: 0 0 35px 5px yellow,0 0 35px 15px yellow 
-
 }
 
-
-@keyframes borderpulsesun {
-    0% {
-      box-shadow: 0 0 35px 5px yellow,0 0 25px 10px yellow 
-    }
-    
-   50% {
-      box-shadow: 0 0 35px 5px yellow,0 0 35px 20px yellow 
-    }
-    100%{
-      box-shadow: 0 0 35px 5px yellow,0 0 25px 10px yellow 
-
-    }
-}
-@keyframes borderpulsemoon {
-    0% {
-  box-shadow: 0 0 35px 5px silver,0 0 15px 5px silver
-}
-    
-   50% {
-      box-shadow: 0 0 35px 5px silver,0 0 20px 10px silver
-    }
-    100%{
-      box-shadow: 0 0 35px 5px silver,0 0 15px 5px silver
-
-    }
+.hidden-scroll {
+  scrollbar-width: none;
 }

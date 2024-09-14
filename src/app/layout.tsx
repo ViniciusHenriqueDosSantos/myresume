@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto } from 'next/font/google'
 import "./globals.css";
-import Provider from "./provider";
 
 const roboto = Roboto({
   weight: '400',
@@ -9,7 +8,10 @@ const roboto = Roboto({
 })
 export const metadata: Metadata = {
   title: "Vinicius Henrique dos Santos",
-  description: "Meu portfólio",
+  description: "Portfólio de desenvolvedor de Vinicius Henrique dos Santos",
+  icons: {
+    icon: '/images/icon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -22,12 +24,11 @@ export default function RootLayout({
 
   return (
     <html lang="pt-br">
-      <Provider >
-        <body className={roboto.className + 'overflow-x-hidden dark:bg-slate-800  transition-colors      w-full bg-sky-500  m-auto  text-slate-300 '}>
+      <body className={roboto.className + ' bg-slate-800  transition-colors      w-full m-auto  text-slate-300 '}>
 
-          {children}
-        </body>
-      </Provider>
+        {children}
+      </body>
+
 
     </html>
   );
