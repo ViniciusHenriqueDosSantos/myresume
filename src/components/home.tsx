@@ -8,6 +8,7 @@ import HeaderButton from "./headerbutton";
 import ButtonCopy from "./buttoncopy";
 import VerticalCarroussel from "./verticalcarroussel";
 import Header from "./header";
+import Link from "next/link";
 
 export default function HomeComponent() {
   return (
@@ -66,24 +67,24 @@ export default function HomeComponent() {
           <div className="flex  flex-col gap-8 lg:gap-0 lg:flex-row justify-evenly font-bold text-xl items-center">
             <div className="text-center  w-full lg:w-4/12 ">
 
-              <a target="_blank" className="flex items-center gap-2 justify-center" href="https://wa.me/+5512981377347">
+              <Link target="_blank" className="flex items-center gap-2 justify-center" href="https://wa.me/+5512981377347">
                 <Phone size={30} fill="white" className=" border-1 border border-white rounded-full bg-green-500 text-white p-1.5 " />
                 Chamar no WhatsApp
-              </a>
+              </Link>
               <div className=" flex mt-3  justify-center gap-4 items-center"><Emphasized>+55 (12) 981377347</Emphasized> <ButtonCopy text="+5512981377347" /></div>
             </div>
             <div className="text-center w-full lg:w-4/12">
 
               <p>LINKEDIN</p>
-              <div className=" flex mt-3  justify-evenly gap-4 items-center"><EmphasizedLink target="_blank" href="www.linkedin.com/in/vinicius-henrique-dos-santos-35a955246/">Vinicius Henrique dos Santos</EmphasizedLink> </div>
+              <div className=" flex mt-3  justify-evenly gap-4 items-center"><EmphasizedLink target="_blank" href="https://www.linkedin.com/in/vinicius-henrique-dos-santos-35a955246/">Vinicius Henrique dos Santos</EmphasizedLink> </div>
 
             </div>
             <div className="text-center  w-full lg:w-4/12">
 
-              <a target="_blank" className="flex items-center gap-2 justify-center" href="mailto: viniciushenriquesantos2005@gmail.com">
+              <Link target="_blank" className="flex items-center gap-2 justify-center" href="mailto: viniciushenriquesantos2005@gmail.com">
                 <Mail />
                 Enviar E-mail
-              </a>
+              </Link>
               <div className=" flex mt-3  justify-center gap-4 items-center"><Emphasized className=" text-ellipsis    overflow-hidden " >viniciushenriquesantos2005@gmail.com</Emphasized> <ButtonCopy text="viniciushenriquesantos2005@gmail.com" /></div>
             </div>
           </div>
