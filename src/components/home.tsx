@@ -25,7 +25,7 @@ export default function HomeComponent() {
             <HeaderButton href="#about">SOBRE</HeaderButton>
             <HeaderButton href="#works">TRABALHOS</HeaderButton>
             <HeaderButton href="#contact">CONTATO</HeaderButton>
-            <HeaderButton href="">MAKING OF</HeaderButton>
+            <HeaderButton href="#">MAKING OF</HeaderButton>
 
 
           </div>

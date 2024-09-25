@@ -11,7 +11,7 @@ export default function Header() {
             Sobre
             <hr className="h-0 w-0 transition-all group-hover:w-full" />
           </Link>
-          <Link className="group" href={"#historic"}>
+          <Link className="group" href={"#works"}>
             Trabalhos
             <hr className="h-0 w-0 transition-all group-hover:w-full" />
 
@@ -21,7 +21,7 @@ export default function Header() {
             <hr className="h-0 w-0 transition-all group-hover:w-full" />
 
           </Link>
-          <Link className="group" href={"#about"}>
+          <Link className="group" href={"#"}>
             Making Of
             <hr className="h-0 w-0 transition-all group-hover:w-full" />
 
@@ -66,7 +66,7 @@ export default function Header() {
           <hr className="h-0 w-0 transition-all group-hover:w-full" />
 
         </Link>
-        <Link className="group" href={""}>
+        <Link className="group" href={"#"}>
           Making Of
           <hr className="h-0 w-0 transition-all group-hover:w-full" />
 
